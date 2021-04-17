@@ -12,3 +12,5 @@ This is just a little side project that I'm working on but hopefully I can finis
     <ul>Be able to remove events from any date</ul>
     <ul>If the webpage is opened within 24 hours of an event, you'll get a reminder that the event is near</ul>
 </li>
+
+I don't have the best JS and jQuery skills, so if there's anything I do that you think could be changed to make something better or easier, please feel free to let me know! I would really appreciate it
