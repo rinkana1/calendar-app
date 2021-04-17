@@ -1,1 +1,49 @@
 @charset "UTF-8";
+
+    /*html {
+        font-family: "Roboto", sans-serif;
+    }
+
+    body {
+        font-family: inherit;
+        margin: 80px 0 0 0;
+        padding: 30px;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        background-color: rgb(22, 84, 197);
+        box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.438);
+        
+        font-family: inherit;
+        color: #fff;
+    }
+
+    */
+
+    /* I started with CSS just so I could see the style I was going to go with
+    before I jumped back onto the HTML and JS */
+
+    table.calendar {
+        border: 1px solid black;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+    }
+
+    table.calendar th {
+        border: 1px solid black;
+        padding: 15px;
+    }
+    table.calendar td {
+        border: 1px solid black;
+        padding: 50px;
+        transition: 0.2s;
+    }
