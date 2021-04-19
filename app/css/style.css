@@ -1,21 +1,24 @@
 @charset "UTF-8";
 
-    /*html {
+    html {
         font-family: "Roboto", sans-serif;
     }
-
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+    }
     body {
         font-family: inherit;
         margin: 80px 0 0 0;
         padding: 30px;
     }
-
     header {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px;
+        height: 6rem;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
 
@@ -25,25 +28,206 @@
         font-family: inherit;
         color: #fff;
     }
+    header .title {
+        position: absolute;
+        top: 2rem;
+        left: 30px;
 
-    */
+        font-family: inherit;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2rem;
+    }
+    header .npt-dateSearch {
+        position: absolute;
+        top: 2rem;
+        left: 260px;
+
+        height: 2rem;
+        width: 200px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+
+        padding: 0 10px 0 10px;
+    }
+    header .btn-addEvent {
+        position: absolute;
+        top: 2rem;
+        left: 475px;
+
+        height: 2rem;
+        border:none;
+        outline: none;
+        border-radius: 5px;
+        
+        transition: 0.25s;
+    }
+    header .btn-addEvent:hover {
+        background:rgb(44, 43, 43);
+        color: #fff;
+    }
 
     /* I started with CSS just so I could see the style I was going to go with
     before I jumped back onto the HTML and JS */
 
-    table.calendar {
-        border: 1px solid black;
+    .calendarContainer {
+        font-family: inherit;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        display: block;
         width: 100%;
         height: 100%;
-        padding: 50px;
     }
-
-    table.calendar th {
-        border: 1px solid black;
-        padding: 15px;
+    table {
+        height: 100%;
+        width: 100%;
+        font-family: inherit;
+        border-collapse: seperate;
+        border-spacing: 0;
     }
-    table.calendar td {
-        border: 1px solid black;
-        padding: 50px;
-        transition: 0.2s;
+    .head_cal {
+        background: #fff;
+        color: rgb(22, 84, 197);
+        font-size: 2rem;
+        line-height: 5rem;
+        text-transform: uppercase;
+    }
+    .subhead_cal {
+        background: rgb(22, 84, 197);
+        color: #fff;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    .week_cal {
+        background: #fff;
+        color: #d7d7d7;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .white_cal {
+        background: #ececec !important;
+    }
+    tbody.days_cal tr td a {
+        padding: 0;
+        text-decoration: none;
+        background: #fff;
+        color: #888;
+        height: 3.2rem;
+        width: 100%;
+        line-height: 3.2rem;
+        display: block;
+    }
+    tbody.days_cal tr td {
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ececec;
+        text-align: center;
+        width: 14.28571428571429%;
+        height: auto;
+    }
+    .event {
+        color: rgb(22, 84, 197) !important;
+        transition: all 0.3s ease;
+    }
+    .today_cal.event {
+        background: #ff8d8d !important;
+        color: #fff !important;
+        transition: all 0.3s ease;
+    }
+    .today_cal.event:hover,
+    .event:hover {
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+    .week_event {
+        color: rgb(22, 84, 197);
+    }
+    #js-calendarData {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        color: #c5c5c5;
+        opacity:  0;
+        visibility: hidden;
+        transform: scale(0, 0);
+        transition: all 0.8s ease;
+    }
+    #js-calendarData h3 {
+        text-align: center;
+        font-size: 20px;
+        padding: 5px 10px;
+        margin: 0;
+        background: #f2f2f2;
+        color: rgb(22, 84, 197);
+        border-bottom: 1px solid #dfdfdf;
+        text-transform: capitalize;
+    }
+    #js-calendarData dl {
+        padding: 0.5em;
+        margin-left: 0;
+        display: block;
+        height: calc(100% - 4rem);
+    }
+    #js-calendarData dt {
+        float: left;
+        clear: left;
+        width: 5rem;
+        text-align: left;
+        font-size: 0.8rem;
+        font-family: inherit;
+        font-weight: 400;
+        color: rgb(22, 84, 197);
+        background: #fff;
+        padding: 0.2rem;
+    }
+    #js-calendarData dd {
+        margin: 0 0 1rem 5rem;
+        padding: 0 0.5rem 0.5rem 0.5rem;
+        font-family: inherit;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        color: #adadad;
+        border-bottom: 1px solid #eaeaea;
+    }
+    #js_calendarData dd:last-child {
+        border: none;
+    }
+    #js-calendarData a:not(.hideEvent) {
+        color: rgb(22, 84, 197);
+        border: 0.1rem solid rgb(22, 84, 197);
+        padding: 0.2rem 1rem;
+        text-decoration: none;
+    }
+    .showData {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(1, 1) !important;
+        transition: all 0.2s ease;
+    }
+    .hideEvent {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 2rem;
+        font-family: inherit;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        background: #f2f2f2;
+        border-left: 0.1rem solid #e5e5e5;
+        color: #d3d3d3 !important;
+    }
+    .hideEvent:hover {
+        text-decoration: none;
+        color: #f55
     }

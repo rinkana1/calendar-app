@@ -1,68 +1,88 @@
 
-var unixStartDate = new Date("January 1, 1970 00:00:00");
-var today = new Date();
-console.log(today);
 
-var currentMonth;
-var currentYear = today.getFullYear();
+//Start
+$('#js-calendar').html(createCalendar());
 
-function currentMonthAndYear() {
-    switch (today.getMonth()) {
-        case 0:
-            currentMonth = 'January';
-            break;
-        case 1:
-            currentMonth = 'February';
-            break;
-        case 2:
-            currentMonth = 'March';
-            break;
-        case 3:
-            currentMonth = 'April';
-            break;
-        case 4:
-            currentMonth = 'May';
-            break;
-        case 5:
-            currentMonth = 'June';
-            break;
-        case 6:
-            currentMonth = 'July';
-            break;
-        case 7:
-            currentMonth ='August';
-            break;
-        case 8:
-            currentMonth = 'September';
-            break;
-        case 9:
-            currentMonth = 'October';
-            break;
-        case 10:
-            currentMonth = 'November';
-            break;
-        case 11:
-            currentMonth = 'December';
-            break;
+
+function createCalendar() {
+    //Variables
+    var day_of_week = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'),
+        month_of_year = new Array(
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+        ),
+        Calendar = new Date(),
+        year = Calendar.getYear(),
+        month = Calendar.getMonth(),
+        today = Calendar.getDate(),
+        weekday = Calendar.getDay(),
+        html = '';
+    
+    //Start on the first of this month
+    Calendar.setDate(1);
+    Calendar.setMonth(month);
+
+    //Template Calendar
+    html = '<table>';
+    //Head
+    html += '<thead>';
+    html += '<tr class="head_cal"><th colspan="7">' + month_of_year[month] + '</th></tr>';
+    html += '<tr class="subhead_cal"><th colspan="7">' + Calendar.getFullYear() + '</th></tr>';
+    html += '<tr class="week_cal">';
+    for (var i = 0; i < 7; i++) {
+        if (weekday = i) {
+            html += '<th class="week_event">' + day_of_week[i] + '</th>'
+        } else {
+            html += '<th>' + day_of_week[i] + '</th>';
+        }
     }
-    $('#js-calendarTitle').text(`${currentMonth} ${currentYear}`)
-    console.log(currentMonth, currentYear);
+    html += '</tr>';
+    html += '</thead>'
+
+    //Body
+    html += '<tbody class="days_cal">';
+    html += '</tr>';
+
+    //White Zone
+    for (var i = 0; i < Calendar.getDay(); i++) {
+        html += '<td class="white_cal"> </td>';
+    }
+
+    for (var i = 0; i < 31; i++) {
+        if (Calendar.getDate() > i) {
+            week_day = Calendar.getDay();
+
+            if (week_day === 0) {
+                html += '</tr>';
+            }
+            if (week_day !== 7) {
+                // This Day
+                var day = Calendar.getDate();
+                var info = Calendar.getMonth() + 1 + '/' + day + '/' + Calendar.getFullYear();
+
+                if (today === Calendar.getDate()) {
+                    html += '<td><a class="today_cal" href="#" data-id="' + info + '">' + day + '</a></td>';
+                } else {
+                    html += '<td><a href="#" data-id="' + info + '" >' + day + '</a></td>';
+                }
+            }
+            if (week_day == 7) {
+                html += '</tr>';
+            }
+        }
+
+        Calendar.setDate(Calendar.getDate() + 1);
+        console.log(day)
+    } //end for loop
+    return html;
 }
-
-currentMonthAndYear();
-
-function yearOptionList() {
-    var yyyy = unixStartDate.getFullYear();
-    var yearSelect = $('#js-yearSelect');
-    var html = '<option>Select Year</option>';
-    var limit = currentYear + 10;
-
-    for (var i = 0; yyyy <= limit; i++, yyyy++) {
-        html = html + `<option value="${yyyy}">` + yyyy + '</option>'
-    };
-
-    yearSelect.html(html);
-    console.log(limit)
-}
-
-yearOptionList();

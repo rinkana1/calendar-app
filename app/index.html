@@ -19,7 +19,7 @@
 </head>
 <body>
     <header>
-        <span class="title">Calendar</span>
+        <span class="title">Your Calendar</span>
         <input title="Search" id="js-dateSearch" class="npt-dateSearch" type="text" placeholder="Search...">
         <button id="js-addEvent" class="btn-addEvent">Add Event</button>
     </header>
@@ -28,84 +28,30 @@
         <form>
             <select title="monthSelect" name="monthSelect" id="js-monthSelect">
                 <option value="" selected="selected">Select Month</option>
-                <option value="JAN">January</option>
-                <option value="FEB">February</option>
-                <option value="MAR">March</option>
-                <option value="APR">April</option>
-                <option value="MAY">May</option>
-                <option value="JUN">June</option>
-                <option value="JUL">July</option>
-                <option value="AUG">August</option>
-                <option value="SEP">September</option>
-                <option value="OCT">October</option>
-                <option value="NOV">November</option>
-                <option value="DEC">December</option>
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
             </select>
             <select title="yearSelect" name="yearSelect" id="js-yearSelect">
-
+                <option value="" selected="selected">Select Year</option>
             </select>
             <button type="submit">Go</button>
         </form>
-        <table class="calendar">
-            <caption id="js-calendarTitle"></caption>
-            <tr>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-            </tr>
-            <tr>
-                <td id="js-0"></td>
-                <td id="js-1"></td>
-                <td id="js-2"></td>
-                <td id="js-3"></td>
-                <td id="js-4"></td>
-                <td id="js-5"></td>
-                <td id="js-6"></td>
-            </tr>
-            <tr>
-                <td id="js-7"></td>
-                <td id="js-8"></td>
-                <td id="js-9"></td>
-                <td id="js-10"></td>
-                <td id="js-11"></td>
-                <td id="js-12"></td>
-                <td id="js-13"></td>
-            </tr>
-            <tr>
-                <td id="js-14"></td>
-                <td id="js-15"></td>
-                <td id="js-16"></td>
-                <td id="js-17"></td>
-                <td id="js-18"></td>
-                <td id="js-19"></td>
-                <td id="js-20"></td>
-            </tr>
-            <tr>
-                <td id="js-21"></td>
-                <td id="js-22"></td>
-                <td id="js-23"></td>
-                <td id="js-24"></td>
-                <td id="js-25"></td>
-                <td id="js-26"></td>
-                <td id="js-27"></td>
-            </tr>
-            <tr>
-                <td id="js-28"></td>
-                <td id="js-29"></td>
-                <td id="js-30"></td>
-                <td id="js-31"></td>
-                <td id="js-32"></td>
-                <td id="js-33"></td>
-                <td id="js-34"></td>
-            </tr>
-        </table>
+        <div class="calendar" id="js-calendar"></div>
+        <div class="calendarData" id="js-calendarData"></div>
     </div>
 
 
     <script src="./js/main.js"></script>
+    
 </body>
 </html>
