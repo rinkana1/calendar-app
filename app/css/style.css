@@ -18,7 +18,8 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 6rem;
+        height: 6vw;
+        z-index: 1;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
 
@@ -30,47 +31,47 @@
     }
     header .title {
         position: absolute;
-        top: 2rem;
-        left: 30px;
+        top: 1.75vw;
+        left: 3vw;
 
         font-family: inherit;
-        font-size: 2rem;
+        font-size: 2.5vw;
         font-weight: 700;
-        line-height: 2rem;
+        line-height: 2.5vw;
     }
     header .npt-dateSearch {
         position: absolute;
-        top: 2rem;
-        left: 260px;
+        top: 1.75vw;
+        left: 21vw;
 
-        height: 2rem;
-        width: 200px;
-        border-radius: 5px;
+        height: 2.5vw;
+        width: 25vw;
+        border-radius: 2.5vw;
         outline: none;
         border: none;
 
+        font-family: inherit;
+        font-size: 1.25vw;
         padding: 0 10px 0 10px;
     }
     header .btn-addEvent {
         position: absolute;
-        top: 2rem;
-        left: 475px;
+        top: 1.75vw;
+        left: 47vw;
 
-        height: 2rem;
-        border:none;
+        font-family: inherit;
+        font-size: 1vw;
+
+        height: 2.5vw;
+        border: 1px solid grey;
         outline: none;
-        border-radius: 5px;
-        
-        transition: 0.25s;
+        border-radius: 2.5vw;
     }
     header .btn-addEvent:hover {
         background:rgb(44, 43, 43);
         color: #fff;
+        transition: 0.2s;
     }
-
-    /* I started with CSS just so I could see the style I was going to go with
-    before I jumped back onto the HTML and JS */
-
     .calendarContainer {
         font-family: inherit;
         position: relative;
@@ -79,6 +80,36 @@
         display: block;
         width: 100%;
         height: 100%;
+    }
+    .monthSelect,
+    .yearSelect {
+        font-family: inherit;
+        font-size: 1vw;
+        position: relative;
+        margin: 0;
+        padding: 0 0 0 10px;
+        width: 10vw;
+        height: 2.75vw;
+        border-radius: 3vw;
+        border: 1px solid grey;
+        outline: none;
+    }
+    .confirmMonthYear {
+        font-family: inherit;
+        font-size: 1vw;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 5vw;
+        height: 2.75vw;
+        border-radius: 3vw;
+        border: 1px solid grey;
+        outline: none;
+    }
+    .confirmMonthYear:hover {
+        background-color: rgb(44, 43, 43);
+        color: #fff;
+        transition: 0.2s;
     }
     table {
         height: 100%;
@@ -110,22 +141,25 @@
         background: #ececec !important;
     }
     tbody.days_cal tr td a {
-        padding: 0;
+        margin-top: 0;
+        padding: 1rem;
         text-decoration: none;
         background: #fff;
         color: #888;
-        height: 3.2rem;
+        height: 14.28571428571429vw;
         width: 100%;
-        line-height: 3.2rem;
-        display: block;
+        line-height: 1rem;
+        vertical-align: top;
+        text-align: right;
+        display: inline-block;
     }
     tbody.days_cal tr td {
         padding: 0;
         margin: 0;
         border: 1px solid #ececec;
-        text-align: center;
         width: 14.28571428571429%;
         height: auto;
+        display: table-cell;
     }
     .event {
         color: rgb(22, 84, 197) !important;
