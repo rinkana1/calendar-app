@@ -10,18 +10,16 @@
     }
     body {
         font-family: inherit;
-        margin: 80px 0 0 0;
-        padding: 30px;
+        margin: 12vw 0 0 0;
+        padding: 1.25vw;
     }
     header {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 6vw;
-        z-index: 1;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        height: 12vw;
+        z-index: 2;
 
         background-color: rgb(22, 84, 197);
         box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.438);
@@ -31,41 +29,42 @@
     }
     header .title {
         position: absolute;
-        top: 1.75vw;
+        top: 4.25vw;
         left: 3vw;
 
         font-family: inherit;
-        font-size: 2.5vw;
+        font-size: 3.5vw;
         font-weight: 700;
-        line-height: 2.5vw;
+        line-height: 3.5vw;
     }
     header .npt-dateSearch {
         position: absolute;
-        top: 1.75vw;
-        left: 21vw;
+        top: 4.25vw;
+        left: 28vw;
 
-        height: 2.5vw;
-        width: 25vw;
-        border-radius: 2.5vw;
+        height: 3.5vw;
+        width: 30vw;
+        border-radius: 3.5vw;
         outline: none;
         border: none;
 
         font-family: inherit;
         font-size: 1.25vw;
-        padding: 0 10px 0 10px;
+        padding: 0 0.75vw 0 0.75vw;
     }
     header .btn-addEvent {
         position: absolute;
-        top: 1.75vw;
-        left: 47vw;
+        top: 4.25vw;
+        right: 3vw;
 
         font-family: inherit;
-        font-size: 1vw;
+        font-size: 1.25vw;
 
-        height: 2.5vw;
+        height: 3.5vw;
+        width: 8vw;
         border: 1px solid grey;
         outline: none;
-        border-radius: 2.5vw;
+        border-radius: 3.5vw;
     }
     header .btn-addEvent:hover {
         background:rgb(44, 43, 43);
@@ -131,6 +130,14 @@
         font-size: 1.2rem;
         line-height: 2rem;
     }
+    thead.time_cal .subhead_cal {
+        background: rgb(22, 84, 197);
+        color: #fff;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        text-align: center;
+        padding: 0 0 0 3vw;
+    }
     .week_cal {
         background: #fff;
         color: #d7d7d7;
@@ -140,7 +147,42 @@
     .white_cal {
         background: #ececec !important;
     }
-    tbody.days_cal tr td a {
+    tbody.time_cal tr td.spacer {
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        width: 10%;
+        height: 3vw;
+    }
+    tbody.time_cal tr td.event {
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        width: auto;
+        height: 3vw;
+    }
+    tbody.time_cal tr td.time {
+        padding: 2vw;
+        margin: 0;
+        border: 1px solid #ececec;
+        width: 10%;
+        height: 3vw;
+        font-family: inherit;
+        text-align: center;
+        font-size: 1.25vw;
+    }
+    tbody.time_cal tr td.end {
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        border-right: 1px solid #ececec;
+        width: 0.01%;
+        height: 3vw;
+    }
+    tbody.days_cal tr td div {
         margin-top: 0;
         padding: 1rem;
         text-decoration: none;
@@ -152,6 +194,7 @@
         vertical-align: top;
         text-align: right;
         display: inline-block;
+        cursor: pointer;
     }
     tbody.days_cal tr td {
         padding: 0;
@@ -159,7 +202,6 @@
         border: 1px solid #ececec;
         width: 14.28571428571429%;
         height: auto;
-        display: table-cell;
     }
     .event {
         color: rgb(22, 84, 197) !important;
