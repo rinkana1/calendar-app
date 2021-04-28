@@ -1,6 +1,11 @@
 
 
 //Start
+
+//Variables (can be moved to a database using a node/js server or other server)
+
+
+//Function Calls
 $('#js-calendar').html(createCalendar);
 $('#js-yearSelect').html(yearSelect);
 $('#js-confirmMonthYear').click(function () {
@@ -11,6 +16,9 @@ $('.js-calendarDay').click(function() {
     date = $(this).attr('data-id');
     $('#js-calendar').html(dayCalendar(date))
 });
+$('#js-addEvent').click(addEventShow);
+$('.overlayEffect').click(addEventHide);
+$('$js-eventExit').click(addEventHide);
 
 
 function createCalendar() {
@@ -307,6 +315,20 @@ function dayCalendar(date) {
     
 
     return html;
+}
+
+function addEventShow() {
+    $('.div-addEvent').show();
+    $('.overlayEffect').show();
+}
+
+function addEventHide() {
+    $('.div-addEvent').hide();
+    $('.overlayEffect').hide();
+}
+
+function addEvent() {
+    console.log('Test Successful')
 }
 
 function headerScroll() {

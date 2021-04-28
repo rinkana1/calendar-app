@@ -23,7 +23,23 @@
         <input title="Search" id="js-dateSearch" class="npt-dateSearch" type="text" placeholder="Search...">
         <button id="js-addEvent" class="btn-addEvent">Add Event</button>
     </header>
-    <div class="div-addEvent"></div>
+    <div class="overlayEffect"></div>
+    <div class="div-addEvent">
+        <button id="js-eventExit">X</button>
+        <input type="text" name="eventName" class="eventName" id="js-eventName" placeholder="Title...">
+        <input type="date" name="startDate" class="eventStartDate" id="js-eventStartDate" placeholder="Start Date...">
+        <input type="date" name="endDate" class="eventEndDate" id="js-eventEndDate" placeoholder="End Date...">
+        <input type="time" class="eventStartTime" id="js-eventStartTime">
+        <input type="time" class="eventEndTime" id="js-eventEndTime">
+        <select name="color" class="eventColor" id="js-eventColor">
+            <option value="" selected="selected">Event Color</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <input type="checkbox" name="eventAllDay" id="js-eventAllDay">
+        <label for="eventAllDay">All Day Event</label>
+    </div>
     <div class="div-calendarContainer">
         <div id="js-calendarForm">
             <select title="monthSelect" name="monthSelect" class="monthSelect" id="js-monthSelect">

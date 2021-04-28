@@ -19,7 +19,7 @@
         left: 0;
         width: 100%;
         height: 12vw;
-        z-index: 2;
+        z-index: 1;
 
         background-color: rgb(22, 84, 197);
         box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.438);
@@ -69,6 +69,84 @@
     header .btn-addEvent:hover {
         background:rgb(44, 43, 43);
         color: #fff;
+        transition: 0.2s;
+    }
+    .overlayEffect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        cursor: pointer;
+        transition: 0.2s;
+
+    }
+    .div-addEvent {
+        position: fixed;
+        margin: 0;
+        padding: 1.5vw;
+        height: 66.66vh;
+        width: 66.66vw;
+        top: 16.66vh;
+        left: 16.66vw;
+        background-color: #fff;
+        box-shadow: 0 0 8px;
+        z-index: 3;
+        transition: 0.2s;
+        font-family: inherit;
+    }
+    .div-addEvent .eventName {
+        position: absolute;
+        top: 2vw;
+        left: 3vw;
+        height: 3vw;
+        width: 50vw;
+        border-radius: 3vw;
+        border: 1px solid #d3d3d3;
+        outline: none;
+        padding: 1vw;
+        font-family: inherit;
+        font-size: 1vw;
+    }
+    .div-addEvent .eventColor {
+        position: absolute;
+        top: 2vw;
+        right: 3vw;
+        height: 3vw;
+        width: 10vw;
+        border-radius: 3vw;
+        border: 1px solid #d3d3d3;
+        outline: none;
+        padding: 0.75vw;
+        font-family: inherit;
+        font-size: 1vw;
+    }
+    .div-addEvent .eventStartDate {
+        position: absolute;
+        top: 6vw;
+        left: 3vw;
+        height: 2.5vw;
+        width: 9vw;
+        border-radius: 2.5vw;
+        border: 1px solid #d3d3d3;
+        outline: none;
+        padding: 0.5vw;
+        font-family: inherit;
+        font-size: 1vw;
+    }
+    .div-addEvent .eventStartTime {
+        position: absolute;
+        top: 6vw;
+        left: 13vw;
+        height: 2.5vw;
+        width: 9vw;
+        border-radius: 2.5vw;
+        border: 
+    }
+    .div-addEvent:child {
+        border-color:rgb(22, 84, 197);
         transition: 0.2s;
     }
     .calendarContainer {
